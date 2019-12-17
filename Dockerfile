@@ -9,8 +9,15 @@ RUN apt-get update && apt-get install -y wget --no-install-recommends \
       --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
+COPY screenshotr.js /screenshotr.js
+COPY pdfr.js /pdfr.js
+COPY browser.js /browser.js
+COPY docker_healthcheck.js /docker_healthcheck.js
+COPY healthcheck.js /healthcheck.js
+COPY app.js /app.js
+
 RUN yarn add express@4.17.1 \
-    && yarn add sharp@0.23.4 \
+    && yarn add sharp@0.23.1 \
     && yarn add puppeteer@2.0.0 \
     && groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && mkdir -p /home/pptruser/Downloads \
@@ -25,13 +32,6 @@ HEALTHCHECK --interval=120s --timeout=15s --start-period=60s \
     CMD node /docker_healthcheck.js
 
 USER pptruser
-
-COPY screenshotr.js /screenshotr.js
-COPY pdfr.js /pdfr.js
-COPY browser.js /browser.js
-COPY docker_healthcheck.js /docker_healthcheck.js
-COPY healthcheck.js /healthcheck.js
-COPY app.js /app.js
 
 EXPOSE 3000
 CMD ["/app.js"]
