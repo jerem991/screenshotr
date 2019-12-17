@@ -1,3 +1,5 @@
+##### Forked from https://github.com/dynamicnet/screenshotr
+
 # Screenshot and PDF converter
 
 Dockerized node webservice that take screenshot of webpage or convert it to PDF
@@ -26,7 +28,7 @@ o_width | opt. int | set the width of the returned image. Default to the viewpor
 o_height | opt. int | set the height of the returned image. Default to the viewport height
 o_format | opt. string (png\|jpg) | set image format for the returned image. Defaults to png
 dom_element_selector | opt. string | a CSS selector of the element you want to screenshot, only if you don't want to screenshot the entire page
-fullpage | opt. int (0\|1) | "1" to take a screenshot of the fullpage, "0" to take a screenshot of the viewport only. Default to 0
+fullpage | opt. int (0\|1) | "1" to take a screenshot of the fullpage, "0" to take a screenshot of the viewport only. Default to 1
 
 ### endpoint /pdf
 Name | Type | Description

@@ -5,13 +5,13 @@ const browser = require('./browser');
 
 var default_parameters = {
     url: "",
-    vp_width: 1024,
-    vp_height: 768,
+    vp_width: 1920,
+    vp_height: 1200,
     o_width: null,
     o_height: null,
     o_format: "png",
     dom_element_selector: "",
-    fullpage: false
+    fullpage: true
 };
 
 /**
