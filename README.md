@@ -7,7 +7,7 @@ Dockerized node webservice that take screenshot of webpage or convert it to PDF
 ```
 # Launch Container
 # The http service will listen on 127.0.0.1 on port 3000
-docker run -p 3000:3000 -d dynamicnet/screenshotr
+docker run -p 3000:3000 -d jerem991/screenshotr
 
 # Take a screenshot of GitHub homepage
 curl http://127.0.0.1:3000/screenshot?url=https://github.com/ > github-home.png
